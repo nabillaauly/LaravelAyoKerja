@@ -168,6 +168,8 @@
                 <textarea placeholder="Ketikkan sesuatu..."></textarea>
                 <button type="submit">Post Comment</button>
             </div>
+
+            <script src="{{ asset('js/forum.js') }}"></script>
         </div>
     </div>
 </div>

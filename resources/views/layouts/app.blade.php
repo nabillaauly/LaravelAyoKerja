@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +14,14 @@
                 <img src="{{ asset('images/logo.png') }}" alt="AyoKerja.co Logo">
             </div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Pelatihan</a></li>
+                <li><a href="">Beranda</a></li>
+                <li><a href="/pelatihan">Pelatihan</a></li>
                 <li><a href="#">Info Loker</a></li>
                 <li><a href="#">CV</a></li>
-                <li><a href="#" class="active">Forum Diskusi</a></li>
+                <li><a href="/" class="active">Forum Diskusi</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
+
             <a href="{{ route('login') }}" class="login">Masuk</a>
             <a href="{{ route('login.perusahaan') }}" class="loginperusahaan">Perusahaan</a>
         </nav>
@@ -78,17 +78,26 @@
     </footer>
 
     <script>
-        const replyDivs = document.querySelectorAll('.reply');
-        replyDivs.forEach(div => {
-            div.addEventListener('click', () => {
-                const repliesSection = div.nextElementSibling;
-                if (repliesSection.style.display === 'none' || repliesSection.style.display === '') {
-                    repliesSection.style.display = 'block';
-                } else {
-                    repliesSection.style.display = 'none';
-                }
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-links li a');
+            
+            // Function to remove 'active' class from all links
+            function removeActiveClass() {
+                navLinks.forEach(link => link.classList.remove('active'));
+            }
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Remove 'active' class from all links
+                    removeActiveClass();
+                    
+                    // Add 'active' class to the clicked link
+                    link.classList.add('active');
+                });
             });
         });
     </script>
+
 </body>
 </html>

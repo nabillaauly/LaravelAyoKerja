@@ -255,12 +255,6 @@ a {
     width: 18px;
     height: 16px;
 }
-
-.favorite-icon {
-    width: 20px;
-    height: 19px;
-}
-
 .category-icon {
     width: 16px;
     height: 12px;
@@ -888,12 +882,13 @@ input[type="checkbox"]:checked + .comment-form {
     }
 
     .view-count {
-        margin-left: auto;
         display: flex;
         align-items: center;
+        font-size: 14px;
+        color: #333;
     }
     
-    .view-count .view-number {
+    .view-number {
         margin-left: 5px;
         color: #555;
         font-size: 12px;
@@ -994,4 +989,5 @@ input[type="checkbox"]:checked + .comment-form {
     .footer-bottom {
         font-size: 10px;
     }
+    
 }

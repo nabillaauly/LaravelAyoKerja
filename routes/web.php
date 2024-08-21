@@ -14,3 +14,7 @@ Route::get('/login', function () {
 Route::get('/login-perusahaan', function () {
     return view('auth.login-perusahaan');
 })->name('login.perusahaan');
+
+Route::get('/pelatihan', function (){
+    return view('pelatihan');
+})->name('pelatihan');
