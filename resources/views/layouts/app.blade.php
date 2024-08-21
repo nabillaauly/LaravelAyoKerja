@@ -76,6 +76,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        const replyDivs = document.querySelectorAll('.reply');
+        replyDivs.forEach(div => {
+            div.addEventListener('click', () => {
+                const repliesSection = div.nextElementSibling;
+                if (repliesSection.style.display === 'none' || repliesSection.style.display === '') {
+                    repliesSection.style.display = 'block';
+                } else {
+                    repliesSection.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -97,7 +110,5 @@
                 });
             });
         });
-    </script>
-
 </body>
 </html>
